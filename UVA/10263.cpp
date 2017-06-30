@@ -1,3 +1,15 @@
+/* Mohamed Ahmed Nabil
+
+Calculate the minmum distance between the point m and all segments... 
+
+If m is over the segment..Use the perpendicular distance, calculate b and
+use parametric equation to find this point
+
+Otherwise mindist=min(mindist, minum distanace to 2 end points)
+
+*/
+
+
 #include <bits/stdc++.h>
 
 using namespace std;
