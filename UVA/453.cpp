@@ -1,6 +1,8 @@
 /*
-
-    Radius 2*PI
+    Direct Implemntation of Circle Circle Intersection
+    
+    When printing float rounded it may print as -0.000 so add EPS = 1e-4;
+    
 
 */
 
