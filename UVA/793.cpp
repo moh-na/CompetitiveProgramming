@@ -1,8 +1,7 @@
 /*
 
-    Find intersection of each segment y=0 to maximum y that intersects circle and use that to calculate the number of squares
-
-
+   Just direct disjoint set implementation
+   
 */
 
 #include <bits/stdc++.h>
