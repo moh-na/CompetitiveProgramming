@@ -1,9 +1,8 @@
 /*Mohamed Ahmed Nabil
 
-    Standard Linked list implemenation using array...
-    There is no need to actually invert the list...just if number of inversions mod 2=1 change query 1 to query 2
-    and while printing print the even not the odd if n is even
-
+    Dijkstra modified... But add the time that it takes to process its neighbour nodes to its weight..
+    
+   
 
 */
 #include <bits/stdc++.h>
