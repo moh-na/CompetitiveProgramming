@@ -1,10 +1,9 @@
 /*Mohamed Ahmed Nabil
-
-    For each circle for it to be a contour
-    1)It has to have no intersection with other circles
-    2) It has to not be included completely inside another Ring between R and r
-
-    Just check these conditions
+    
+    For each node of depth x connect it to nodes of depth x-1 (does matter which node as long as you maintain that maximum degree=k)
+    
+    
+    If at the end count of connected nodes !=n then the graph is invalid
 */
 #include <bits/stdc++.h>
 
@@ -80,7 +79,7 @@ int main(){
         cnt=(i!=0);
         while(y<depth[i+1].size()){
            if(cnt>=k){
-                cnt=0;
+                cnt=(i!=0);
             x++;
             if(x>=depth[i].size())break;
            }
