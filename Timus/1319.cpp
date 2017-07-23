@@ -1,5 +1,5 @@
 /*Mohamed Ahmd Nabil
-   As in CF editoial
+   Direct Impl
 
 */
 #include <bits/stdc++.h>
