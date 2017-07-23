@@ -1,6 +1,10 @@
 /*Mohamed Ahmd Nabil
-   As in CF editoial
+   Almost like expression parsing with stack
+   
+   
+   skip the first element.. Put first half in stack but first element in stack put second half 
 
+   
 */
 #include <bits/stdc++.h>
 
