@@ -1,11 +1,18 @@
 /*Mohamed Ahmed Nabil
 
-  Let the nodes (questions be a graph)
+  Let the nodes be the questions
   
   We dont want any 2 neighbouring nodes 2 have the same round (same color)
-  So we want 2 seperate the nodes into 2 groups such that each group doesnt have an edge to the same group (Bipartite graph coloring)
+  So we want 2toperate the nodes into 2 groups such that each group doesnt have an edge to the same group 
+  (Bipartite graph coloring)
   
-  We do that for every connected component then see how to combine the components to make sum =N... using DP
+  We do that for every connected component 
+  
+  and seperatae them into groups groups colored 1 and the groups colored 0
+  
+  Now We see how to combine the groups so that we never take a 1 and its opposite 0 so that the sum = N
+  
+  If we cant color the graph correctly or select components to make sum =N then there is no answer
 
 */
 #include <bits/stdc++.h>
