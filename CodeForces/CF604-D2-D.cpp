@@ -6,7 +6,8 @@ a, 2a , 3a , 4a,... (p-1)a
 under modulos p gives us some rearrangment of the sequence
 1,2,3,4,...p-1
 
-proof link: https://en.wikipedia.org/wiki/Proofs_of_Fermat%27s_little_theorem (Under Modular Arithmetic - Rearrangment Propperty)
+proof link: https://en.wikipedia.org/wiki/Proofs_of_Fermat%27s_little_theorem 
+(Under Modular Arithmetic - Rearrangment Propperty)
 
 
 
@@ -38,7 +39,8 @@ f(1) f(2) f(3)... f(p-1)
 also 
 lets say we find the relation  (kf(a) mod p)= f(b)
 
-Therefore if we choose different values for f(a) {1.. p-1} they will give us some rearangement of the numbers [1...p-1] and ofcourse f(a)=0 will give us f(b)=0;
+Therefore if we choose different values for f(a) {1.. p-1} they will give us some rearangement of the numbers [1...p-1] 
+and ofcourse f(a)=0 will give us f(b)=0;
 
 So For each value of F(a) there is a distinct corresponding value of F(b) 
 so if we say there are n different values for f(a) when we reach F(b) its values depend on 
@@ -60,7 +62,9 @@ F(b) depends on F(a) if k f(a) mod p = f(b)
 
 if(f(a) depends on f(b)) put an edge between them
 
-Now Loop on all the possible values (a) and each time you count a value as having n different possiblites floodfill on it and its dependencies and all their dependencies (children of children and so on) as slecting n different values for the first F(a) will make them all have to follow in order to maintin the property f(kx mod p) = k f(x) mod p
+Now Loop on all the possible values (a) and each time you count a value as having n different possiblites floodfill 
+on it and its dependencies and all their dependencies (children of children and so on) as slecting n different values 
+for the first F(a) will make them all have to follow in order to maintin the property f(kx mod p) = k f(x) mod p
 
 
 
