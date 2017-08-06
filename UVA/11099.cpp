@@ -1,8 +1,8 @@
-/* Factorize the number in logn using seive preprocessing
-
+/* 
+Factorize the number in logn using seive preprocessing
 Then After finding the prime factors... Use backtracking to combine them to get the lowest
-number possible >n
-
+number possible >n 
+(But making sure to include each number atleast once by starting with a number that has each prime factor once)
 */
 #include <bits/stdc++.h>
 #include <complex>
@@ -59,9 +59,10 @@ bool willoverflow(ll a,ll b)
 }
 
 int prime[2000000+10];
-   vector<ll> f;
-      long long n;
-      int ans;
+vector<int> f;
+int n;
+int ans;
+
 void seive(){
     prime[0]=prime[1]=1;
     for(int i=2; i*i<=2000000; i++){
@@ -73,9 +74,9 @@ void seive(){
 
 }
 
-vector<ll> factorize(int n){
+vector<int> factorize(int n){
 
-    vector<ll> f;
+    vector<int> f;
     ll t=n;
     while(prime[t]!=0){
         f.pb(prime[t]);
@@ -96,7 +97,7 @@ void solve(int curr,int idx){
         return;
     }
 
-    while(curr<20000000){
+    while(curr<2000000){
         solve(curr,idx+1);
         if(willoverflow(curr,f[idx])) break;
         curr*=f[idx];
@@ -111,13 +112,15 @@ void solve(int curr,int idx){
 int main(){
 
     seive();
-    while(cin>>n){
+    while(scanf("%d",&n)==1){
 
         if(n<=1){
-            cout<<"Not Exist!"<<endl;
+             printf("Not Exist!\n");
             continue;
         }
-         f=factorize(n);
+        
+        //----------------------------------
+        f=factorize(n);
 
         set<int> temp(f.begin(),f.end());
         f.clear();
@@ -126,14 +129,16 @@ int main(){
             start*=x;
             f.pb(x);
         }
+        
+        //--------------------------------------
         ans=20000000;
         solve(start,0);
 
        if(ans<2000000){
-        cout<<ans<<endl;
+        printf("%d\n", ans);
        }
         else{
-            cout<<"Not Exist!"<<endl;
+           printf("Not Exist!\n");
         }
 
 
