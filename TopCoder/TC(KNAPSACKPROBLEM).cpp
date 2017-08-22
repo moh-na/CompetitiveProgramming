@@ -1,3 +1,11 @@
+/*
+Meet in Middle (First N/2 Elements - Second N/2 element)
+Generate all possible ways of taking elements using the first N/2 Elements == 2^(N/2) element
+and store them in vector1
+Then do the same for the last N/2 elements and then check how many elements in vector1 can be added to the current sum
+so that we dont exceed capacity
+
+*/
 
 #include <bits/stdc++.h>
 #include <complex>
