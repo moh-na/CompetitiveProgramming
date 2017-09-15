@@ -1,4 +1,36 @@
+/*
+Simplified Problem: Given sum of rows and colums give a matrix which rows and colums with the required total sums
 
+
+We can imagine that the rows are nodes and that the colums are nodes There exist a edge betweeen each row and all the other colums (capactiy INF)
+Now each row has a certain amount of sum it can have.. A certain amount of flow that it can give that can be divided upon the colums 
+as nessessary
+
+Now we make a super source and give each row node an edge = the sum of that row
+A super sink and give each column an edge = the sum of the colum
+
+Apply Maximal matching
+
+If maxmatching = Sumofallrows=sum of all cols Then we can find a matrix that satisfies the constraints
+Each element[i][j] in the matrix = to the flow going in row node [i] to row node [j]
+
+Simplified Problem 2:
+What if the elements in the rows and colums have maximum constraints on them (a value which they cant exceed)
+Then instead of the flow from row[i] to col[j] nodes= INF then the capcity will equal that limit
+
+Actual Problem:
+What if the elements in the rows and colums have both maximum and minmum constraints on them..
+Meaning the edges of the graph have maximum capacities and mimum capacitiies that we have to satisfy 
+
+This is called as, Max Flow with edge dependencies or Cicruclation problem or Max Flow with lowerbound on edges
+
+The algorithm for it so complex but there are many papers online on it.. I have found this code and is used as a blackbox
+Each time an Edge is added we define both a lowerbound flow and an upperbound flow for this edge
+
+Note.. In this code before using the flow graph object you must both declare the object with  max number of V,E and then use
+.clear(V)  to setup some variables  
+
+*/
 #include <bits/stdc++.h>
 #include <vector>
 #include<cstdio>
@@ -245,7 +277,7 @@ bool solve(){
         lp(j,c){
             if(ub[i][j]<lb[i][j]) return 0;
 
-                G.add_edge(i,r+j,lb[i][j],ub[i][j]);
+                G.add_edge(i,r+j,lb[i][j],ub[i][j]); //Add edge from node to node with lowerbound and upperbound
 
         }
 
