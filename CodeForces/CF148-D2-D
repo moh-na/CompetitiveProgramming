@@ -1,0 +1,110 @@
+/*
+For every state (w,b) player 1 can select a white mouse with probabliity w/(w+b)
+and a black mouse with probabliity b/(w+b)
+
+If it is players ones turn he can win with a probability of w/(w+b) or continue to the state
+(w,b-1) with probablity (b)/(b+w)
+and so on
+*/
+
+
+#include <bits/stdc++.h>
+#include <vector>
+#include<cstdio>
+#include <cstdlib>
+#include <complex>
+#include <algorithm>
+#include <iostream>
+#include <set>
+#include <cstring>
+using namespace std;
+#define ll long long
+
+
+#define pii pair<int,int>
+#define endl "\n"
+
+#define EPS 1e-7
+#define OO 1000000000
+
+#define on(i,n) i=i|(1<<n)
+#define off(i,n) i=i& (~(1<<n))
+
+typedef  complex<double> point;
+#define X real()
+#define Y imag()
+
+#define vec(a,b) (b-a)
+#define angle(a) (atan2(((a).Y),((a).X)))
+
+#define length(a) (hypot(((a).real()),((a).imag())))
+#define normalize(a) ((a)/(length(a)))
+
+#define dotp(a,b) ((conj(a)*(b)).real())
+#define crossp(a,b) ((conj(a)*(b)).imag())
+#define same(a,b) ((dcmp(((a).X),((b).X))==0 )&& (dcmp(((a).Y),((b).Y))==0))
+
+#define lengthSqr(a) (dp((a),(a)))
+
+#define rotateO(p,ang) ((p)*exp(poll(0,ang)))
+#define rotateA(p,ang,about)  (rotateO(vec(about,p),ang)+about)
+#define reflectO(v,m)  (conj((v)/(m))*(m))
+
+#define debugme freopen("out.txt","w",stdout)
+#define endp return 0;
+
+#define goleft(L,R)  L, (L+R)/2 ,idx*2
+#define goright(L,R) (L+R)/2+1, R, idx*2+1
+const double PI= acos(-1.0);
+long double fixAngle(long double A){return A > 1 ? 1 : (A < -1 ? -1 : A);}
+double dcmp( double a,double b){return fabs(a-b)<EPS?0 : a>b? 1:-1; }
+
+
+double dp[1005][1005];
+bool visited[1005][1005];
+
+double solve(int w, int b, int p){
+    if(w<0 || b<0) return 0;
+    if(w==0) return 0;
+
+
+    if(visited[w][b])return dp[w][b];
+    visited[w][b]=1;
+    
+    if(p==0){
+
+        double ret=0;
+
+        if(b!=0)
+            ret+=solve(w,b-1,!p)*((double)b/(w+b));
+
+
+        return dp[w][b]=((double)w/(w+b)) +ret;
+    }
+    else{
+
+        double ret=0;
+
+
+        if(w && b) //Black to choose and White to run
+            ret+=solve(w-1,b-1,!p)* ((double)b/(w+b)) *  ((double)w/(w+b-1));
+        if(b>1) //Black to run and black to choose
+            ret+=solve(w,b-2,!p) * ((double)b/(w+b))* ((double)(b-1)/(w+b-1));
+
+        //only 1 black remanining return 0
+
+        return dp[w][b]=ret;
+    }
+
+
+
+}
+
+int main(){
+    int n,p;
+    cin>>n>>p;
+
+   double ans=solve(n,p,0);
+    cout<<setprecision(9)<<fixed<<(double)(ans)<<endl;;
+
+}
