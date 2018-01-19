@@ -1,4 +1,5 @@
-
+/* As in editorial exactly
+*/
 #include<bits/stdc++.h>
 #include <iomanip>
 #include <vector>
