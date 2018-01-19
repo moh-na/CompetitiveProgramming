@@ -1,4 +1,16 @@
 
+/*
+Point to line distance is perpendidiular distance if it lies on the line or the minmum to each end if it doesnt
+
+Line AB to lineCD distance is the minmum of A to CD , B to CD , C to AB, D to AB
+
+Polygon distance is looping over all pairs of segments of polygon and finding minumum
+
+Using Polygon Polygon Distance compute the distance between each island and all the other islands
+consider each island as a node
+
+use dijsktra to find shortest path from start node to end node
+*/
 #include<bits/stdc++.h>
 #include <iomanip>
 #include <vector>
