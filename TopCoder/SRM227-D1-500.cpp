@@ -1,4 +1,14 @@
+/*
+Mohamed Ahmed Nabil
+Standard DP problem
+state is a,b,c,d,last
 
+eacah time try to put a tree of kind a or b or c or d 
+if last =0 then last tree is a and you cant put a now
+
+if you reach a state where a,b,c,d=0 then return 1
+
+*/
 #include<bits/stdc++.h>
 #include <iomanip>
 #include <vector>
