@@ -1,4 +1,5 @@
-
+/* Solution Guide : https://github.com/aabdelzaher/Competitive-Programming/blob/master/Live%20Archive/LIVEARCHIVE2932.java
+*/
 #include<bits/stdc++.h>
 #include <iomanip>
 #include <vector>
