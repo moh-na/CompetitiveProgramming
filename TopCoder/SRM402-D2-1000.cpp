@@ -1,3 +1,7 @@
+/*
+Try all permutations possible and store the vector in a map as a string
+*/
+
 #include<bits/stdc++.h>
 #include <iomanip>
 #include <vector>
