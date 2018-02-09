@@ -1,6 +1,8 @@
 /*
 
-
+We want the lexiographically least string
+How to know wether to add string a before b or b before a
+is that if a+b<b+a
 */
 
 #include<bits/stdc++.h>
